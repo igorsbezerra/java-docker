@@ -1,27 +1,21 @@
 package dev.igor.javadocker.controller;
 
 import dev.igor.javadocker.entity.Hero;
-import dev.igor.javadocker.service.HeroService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/hero")
-public class HeroController {
-    private final HeroService heroService;
 
-    public HeroController(HeroService heroService) {
-        this.heroService = heroService;
-    }
-
+public interface HeroController {
     @PostMapping
-    public Hero create(@RequestBody Hero hero) {
-        return heroService.create(hero);
-    }
+    Hero create(@RequestBody Hero hero);
 
     @GetMapping
-    public List<Hero> listAll() {
-        return heroService.listAll();
-    }
+    List<Hero> listAll();
+
+    @GetMapping("/name/{name}")
+    Hero findByName(@PathVariable("name") String name);
 }
