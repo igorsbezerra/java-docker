@@ -10,12 +10,12 @@ public class Hero {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private Long name;
+    private String name;
 
     public Hero() {
     }
 
-    public Hero(Long name) {
+    public Hero(String name) {
         this.name = name;
     }
 
@@ -25,10 +25,10 @@ public class Hero {
     public void setId(Long id) {
         this.id = id;
     }
-    public Long getName() {
+    public String getName() {
         return name;
     }
-    public void setName(Long name) {
+    public void setName(String name) {
         this.name = name;
     }
 }
