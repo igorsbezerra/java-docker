@@ -9,6 +9,7 @@ public class Hero {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false, unique = true)
     private Long name;
 
     public Hero() {
