@@ -27,4 +27,9 @@ public class HeroServiceImpl implements HeroService {
     public List<Hero> listAll() {
         return heroRepository.findAll();
     }
+
+    @Override
+    public Hero findByName(String name) {
+        return heroRepository.findByName(name);
+    }
 }

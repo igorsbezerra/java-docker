@@ -8,4 +8,6 @@ public interface HeroService {
 
     Hero create(Hero hero);
     List<Hero> listAll();
+
+    Hero findByName(String name);
 }
