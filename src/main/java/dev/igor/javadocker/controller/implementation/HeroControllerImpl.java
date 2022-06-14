@@ -28,7 +28,8 @@ public class HeroControllerImpl implements HeroController {
     }
 
     @Override
-    public Hero findByName(@RequestParam String name) {
+    @GetMapping("/name/{name}")
+    public Hero findByName(@PathVariable("name") String name) {
         return heroService.findByName(name);
     }
 }

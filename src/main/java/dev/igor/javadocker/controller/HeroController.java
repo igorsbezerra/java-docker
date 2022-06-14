@@ -1,8 +1,10 @@
 package dev.igor.javadocker.controller;
 
 import dev.igor.javadocker.entity.Hero;
-import dev.igor.javadocker.service.HeroService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
@@ -15,5 +17,5 @@ public interface HeroController {
     List<Hero> listAll();
 
     @GetMapping("/name/{name}")
-    Hero findByName(@RequestParam String name);
+    Hero findByName(@PathVariable("name") String name);
 }
